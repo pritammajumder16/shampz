@@ -7,7 +7,7 @@ var app = express();
 //app.use('view engine', 'ejs')
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://shampionz:shampionz@16@myfirstdb-lwmzp.gcp.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true})
+mongoose.connect("mongodb://shampionz:<password>@myfirstdb-shard-00-00-lwmzp.gcp.mongodb.net:27017,myfirstdb-shard-00-01-lwmzp.gcp.mongodb.net:27017,myfirstdb-shard-00-02-lwmzp.gcp.mongodb.net:27017/test?ssl=true&replicaSet=MyFirstDB-shard-0&authSource=admin&retryWrites=true&w=majority");
 mongoose.Promise=global.Promise;
 
 app.use('/api',routes);
